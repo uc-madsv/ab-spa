@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-// For client-side routing
-
 export default function Home() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
@@ -17,7 +15,7 @@ export default function Home() {
         />
         
         {/* Remote image from LoremFlickr */}
-        <Image
+        <img
           className="dark:invert"
           src="https://loremflickr.com/cache/resized/65535_52874838878_8b2fb92c10_400_300_nofilter.jpg"  // LoremFlickr image
           alt="Remote Image"
