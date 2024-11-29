@@ -2,9 +2,8 @@
 
 import "./globals.css";
 
-import { Suspense } from "react";
-import { UCScripts } from "./components/uc-scripts";
 import localFont from "next/font/local";
+import { ucScriptInjectionString } from "./js/inject-scripts";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,10 +24,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: ucScriptInjectionString,
+          }}
+        ></script>
         <title>Autoblocker SPA E2E page</title>
-        <Suspense>
-          <UCScripts />
-        </Suspense>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
