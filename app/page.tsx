@@ -14,7 +14,7 @@ export default function Home() {
           priority
         />
         
-        {/* Remote image from LoremFlickr */}
+        {/* Remote image from LoremFlickr (Lazy loading) */}
         <img
           className="dark:invert"
           src="https://loremflickr.com/cache/resized/65535_52874838878_8b2fb92c10_400_300_nofilter.jpg"  // LoremFlickr image
@@ -22,9 +22,10 @@ export default function Home() {
           width={400}
           height={300}
           id="home-remote-image-1"
+          loading="lazy"
         />
         
-        {/* Local image */}
+        {/* Local image (Next.js Lazy loading) */}
         <Image
           className="dark:invert"
           src="/images/local-image.jpg" // Local image placed in the 'public/images' folder
@@ -35,8 +36,6 @@ export default function Home() {
         />
         
 
-
-        {/* Button that navigates to another route */}
         <Link href="/about" className="rounded-full bg-blue-500 text-white py-2 px-6 mt-4 hover:bg-blue-600 transition" id="about-page-button">
           Go to About Page
         </Link>

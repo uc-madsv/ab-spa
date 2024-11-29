@@ -9,7 +9,7 @@ export default function About() {
           About Page
         </h1>
 
-        {/* Remote image from LoremFlickr */}
+        {/* Remote image from LoremFlickr (Lazy loading) */}
         <img
           className="dark:invert"
           src="https://loremflickr.com/cache/resized/65535_53826827743_23af52a939_400_300_nofilter.jpg" // LoremFlickr image
@@ -17,20 +17,21 @@ export default function About() {
           width={400}
           height={300}
           id="about-remote-image-1"
+          loading="lazy"
         />
 
-        {/* Another remote image from LoremFlickr */}
+        {/* Another remote image from LoremFlickr (Eager loading) */}
         <img
           className="dark:invert"
           src="https://loremflickr.com/cache/resized/65535_53055778657_229afb9091_400_300_nofilter.jpg" // Another LoremFlickr image
           alt="Another Remote Image"
           width={400}
           height={300}
-          id="about-remote-image-2"
+          id="about-remote-image-2-eager"
+          loading="eager"
         />
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
-          {/* Link to the Home page */}
           <Link
             href="/"
             className="rounded-full bg-blue-500 text-white py-2 px-6 mt-4 hover:bg-blue-600 transition"
